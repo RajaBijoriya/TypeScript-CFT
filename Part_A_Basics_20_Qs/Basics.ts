@@ -116,3 +116,84 @@
 // }
 // console.log(obj)
 
+
+
+
+//  11. Define a function type alias MathOp that takes two numbers and
+//  returns a number. Implement multiply using it.
+
+// type  MathOp = number;
+
+// const Product = (a : MathOp, b : MathOp) : MathOp => {
+//       return a * b;
+// }
+
+// console.log(Product(3, 4))
+
+
+// type MathOp = (a: number, b: number) => number;
+
+// const multiply: MathOp = (a, b) => {
+//     return a * b;
+// }
+
+// console.log(multiply(3, 4))
+
+// type Val =  number | string;
+
+// const CheckType = (a : Val) => {
+//     console.log(typeof a)
+// }
+
+// CheckType("king")
+
+
+//  13. Create a literal type for directions: "north" | "south" | "east" |
+//  "west" .
+
+// type directions=  "north" | "south" | "east" | "west";
+
+// let move : directions;
+// move = "north"
+// move = "south"
+// move = "ip"
+
+
+
+
+
+
+
+
+
+// 14. Write a function isEven that returns true if a number is even.
+// const isEven = (num : number): boolean => {
+//     if(num % 2 == 0) return true;
+//     else return false;
+// }
+// console.log(isEven(4))
+
+
+// 15. Write a function reverseString that reverses a given string.
+
+// const reverseString = (str : string) : string => {
+//     let val = "";
+//     for(let i=str.length-1; i>=0; i--){
+//         val = val+str[i];
+//     }
+//     return val;
+// }
+
+// console.log(reverseString("raja"))
+
+
+// 16. Write a function filterOdd that removes odd numbers from an array.
+
+
+// let arr : number[] = [1, 5, 3, 2, 4, 9]; 
+// const filterOdd = (arr : number[]) : number[] => {
+//     let val = arr.filter((num) => num%2 == 0);
+//     return val;
+// }
+
+// console.log(filterOdd(arr))
