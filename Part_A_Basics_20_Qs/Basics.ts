@@ -197,3 +197,116 @@
 // }
 
 // console.log(filterOdd(arr))
+
+
+// 17. Define a tuple type for [id: number, name: string, isActive:
+//  boolean] and create one instance.
+
+// type UserTuple = [id: number, name: string, isActive: boolean];
+// // creating one instance of the tuple
+// const user1 : UserTuple = [122, "raja", true]
+// console.log(user1[0])
+// console.log(user1[1])
+// console.log(user1[2])
+
+
+//  18. Write a function that returns "positive" , "negative" , or "zero" for a
+//  number input.
+
+// const checkNum = (num : number): string => {
+//     if(num === 0) return "zero";
+//     else if(num < 0) return "negative";
+//     return "positive";
+// }
+// console.log(checkNum(-1))
+
+
+
+
+//  19. Write a function that takes an array of strings and returns them in
+//  uppercase.
+
+// let str : string[] = ["one", "two", "three", "four"];
+
+// const Capital = (str : string[]): string[] => {
+//     let cap : string[] = [];
+//     for(let i=0; i<str.length; i++){
+//         let val : string = "";
+//         for(let j=0; j<str[i].length; j++){
+//            if(j===0){
+//             let a : string = str[i][j].toUpperCase();
+//              val = val + a;
+//            }
+//            else val = val + str[i][j];
+//         }
+
+//         cap.push(val);
+//     }
+//     return cap;
+
+// }
+
+// console.log(Capital(str))
+
+
+
+
+
+
+
+// Example: Function with never Parameter
+// // 20. Write a function that accepts a parameter of type never
+
+// function handleNever(value: never): never {
+//   throw new Error("This function should never be called");
+// }
+
+
+// ✅ Here:
+
+// The function handleNever accepts a parameter of type never.
+
+// That means no possible value can be passed to it.
+
+// If somehow it’s called, it throws an error and never returns.
+
+// ⚙️ Example Usage — Exhaustive Checking
+
+// The most common real-world use of never is when you want to make sure all cases in a union are handled.
+
+// type Direction = "north" | "south" | "east" | "west";
+
+// function move(direction: Direction) {
+//   switch (direction) {
+//     case "north":
+//       console.log("Going North");
+//       break;
+//     case "south":
+//       console.log("Going South");
+//       break;
+//     case "east":
+//       console.log("Going East");
+//       break;
+//     case "west":
+//       console.log("Going West");
+//       break;
+//     default:
+//       // If a new direction is added later, TypeScript will catch it here
+//       const _exhaustiveCheck: never = direction;
+//       handleNever(_exhaustiveCheck);
+//   }
+// }
+
+
+// ✅ Explanation:
+
+// The default case ensures that all possible direction values are covered.
+
+// If you later add something like "up" to Direction and forget to handle it,
+// TypeScript will show a compile-time error.
+
+// 🧠 Summary:
+// Concept	Description
+// never type	Represents a value that never occurs
+// Used for	Functions that never return (like throw, infinite loops) or for exhaustive type checks
+// Example	function fail(msg: string): never { throw new Error(msg); }
